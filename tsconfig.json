@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "esnext"
+    ],
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": ".dist",
+    "removeComments": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "*",
+        "src/types/*"
+      ]
+    },
+    "esModuleInterop": true
+  },
+  "include": [
+    "**/src/**/*.ts",
+    "**/src/**/*.spec.ts",
+    "**/src/**/*.test.ts"
+  ],
+  "exclude": [
+    ".git",
+    ".dist",
+    "node_modules"
+  ]
+}
