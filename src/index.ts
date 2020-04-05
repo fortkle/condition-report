@@ -1,5 +1,6 @@
 import { App } from '@slack/bolt'
 import { config } from 'dotenv'
+import ping from './ping'
 
 config()
 
@@ -9,9 +10,7 @@ const app = new App({
 })
 
 ;(async () => {
-  app.message('hello', async ({ say }) => {
-    say(`hello!`)
-  })
+  ping(app)
 
   const port = process.env.PORT || 3000
   await app.start(port)
