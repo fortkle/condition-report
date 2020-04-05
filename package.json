@@ -2,7 +2,10 @@
   "name": "condition-report",
   "version": "0.1.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node .dist/index.js",
+    "development": "nodemon",
+    "tunnel": "ngrok http 3000 --region ap"
   },
   "author": "",
   "license": "MIT",
