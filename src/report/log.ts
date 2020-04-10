@@ -38,7 +38,7 @@ export default function (app: App) {
     const now = dayjs().locale('ja').date(1).hour(0).minute(0).second(0)
     // デフォルトでは当月指定
     let before = now.add(1, 'month').date(1)
-    let after = now.subtract(1, 'month')
+    let after = now
     const matches = /log ([0-9]{4}\/[0-9]{2}\/[0-9]{2})-([0-9]{4}\/[0-9]{2}\/[0-9]{2})/.exec(message.text)
     if (matches) {
       before = dayjs(matches[2])
@@ -90,7 +90,7 @@ export default function (app: App) {
     }
 
     // 結果をエクセルファイルに出力する
-    const filename = 'コンディションレポート結果_' + before.format('YYYY年MM月')
+    const filename = 'コンディションレポート結果_' + after.format('YYYY年MM月')
     const workbook = xlsx.utils.book_new()
     const ws = xlsx.utils.aoa_to_sheet(data)
     xlsx.utils.book_append_sheet(workbook, ws, 'result')
