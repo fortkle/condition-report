@@ -10,7 +10,7 @@ export default function (app: App) {
    * @condition-report hey [channel]
    */
   app.message(directMention(), async ({ message, context, say }) => {
-    if (typeof message.text !== 'string' || !/(\shey$|\shey\s.+)/.test(message.text)) return
+    if (typeof message.text !== 'string' || !/(\shey$|\shey\s+.+)/.test(message.text)) return
 
     // 管理ユーザー以外は終了させる
     if (!process.env.ADMIN_MEMBERS.split(',').includes(message.user)) {
@@ -20,7 +20,7 @@ export default function (app: App) {
 
     // アンケート対象者のリストとなるチャンネルを特定
     let channel = process.env.DEFAULT_REPORT_CHANNEL
-    const matches = /hey <#([A-Z0-9]+)\|.*>/.exec(message.text)
+    const matches = /hey\s+<#([A-Z0-9]+)\|.*>/.exec(message.text)
     if (matches) {
       channel = matches[1]
     }

@@ -39,7 +39,7 @@ export default function (app: App) {
     // デフォルトでは当月指定
     let before = now.add(1, 'month').date(1)
     let after = now
-    const matches = /log ([0-9]{4}\/[0-9]{2}\/[0-9]{2})-([0-9]{4}\/[0-9]{2}\/[0-9]{2})/.exec(message.text)
+    const matches = /log\s+([0-9]{4}\/[0-9]{2}\/[0-9]{2})-([0-9]{4}\/[0-9]{2}\/[0-9]{2})/.exec(message.text)
     if (matches) {
       before = dayjs(matches[2])
       after = dayjs(matches[1])

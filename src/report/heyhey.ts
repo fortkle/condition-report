@@ -27,7 +27,7 @@ export default function (app: App) {
 
     // アンケート対象者のリストとなるチャンネルを特定
     let channel = process.env.DEFAULT_REPORT_CHANNEL
-    const matches = /heyhey <#([A-Z0-9]+)\|.*>/.exec(message.text)
+    const matches = /heyhey\s+<#([A-Z0-9]+)\|.*>/.exec(message.text)
     if (matches) {
       channel = matches[1]
     }
