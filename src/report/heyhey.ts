@@ -61,7 +61,7 @@ export default function (app: App) {
 
     // アンケートの集計期間を特定する
     const now = dayjs().locale('ja')
-    const firstDayOfMonth = dayjs().locale('ja').date(9).hour(0).minute(0).second(0)
+    const firstDayOfMonth = dayjs().locale('ja').date(1).hour(0).minute(0).second(0)
 
     // ConversionIDを使って、アンケート結果の投稿をサルベージする
     const answeredMembers: Array<string> = []
