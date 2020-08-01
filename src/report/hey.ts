@@ -48,7 +48,8 @@ export default function (app: App) {
     members.map(async (member) => {
       // 1st message
       await app.client.chat.postMessage({
-        text: '月1コンディションレポート：*\n先月のあなたの働きがいを、お天気で表現してみてください:star2:',
+        text:
+          '月1コンディションレポート：\nこの1ヶ月のあなたが、仕事に向き合っていたときのコンディションを、お天気でおしえてください:tulip:',
         token: context.botToken,
         channel: member.id,
         blocks: [
@@ -58,11 +59,7 @@ export default function (app: App) {
               type: 'mrkdwn',
               text: [
                 '*月1コンディションレポート：*',
-                '先月のあなたの働きがいを、お天気で表現してみてください:star2:',
-                '```（注）働きがいとは',
-                '・自分の仕事に誇りを持ち、取り組めていること',
-                '・経営者、管理者を信頼し、必要な時に連携ができていること',
-                '・一緒に働いている人たちと連帯感を持てていること```',
+                'この1ヶ月のあなたが、仕事に向き合っていたときのコンディションを、お天気でおしえてください:tulip:',
               ].join('\n'),
             },
           },
