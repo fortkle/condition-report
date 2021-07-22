@@ -13,7 +13,7 @@
     "@slack/bolt": "^2.0.0",
     "dayjs": "^1.8.23",
     "dotenv": "^8.2.0",
-    "xlsx": "^0.15.6"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@connehito/eslint-config": "^2.0.0",
